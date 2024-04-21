@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/header/Header";
+import {Route, Routes} from "react-router-dom";
+import ListCard from "./components/main/ListCard";
+import AddUnit from "./components/header/AddUnit";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+    <header>
+      <Header/>
+    </header>
+    <main>
+      <Routes>
+        <Route path="*" element={<ListCard/>}/>
+        <Route path="/add" element={<AddUnit/>}/>
+      </Routes>
+    </main>
+  </>
   );
 }
 
