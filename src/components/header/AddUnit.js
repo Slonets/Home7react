@@ -21,7 +21,14 @@ const AddFunc=()=>{
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (newUnit) => {
-        axios.post("http://localhost:5087/api/unit/addnewunit", newUnit)
+        console.log("Create", newUnit.image[0]);
+        axios.post("http://localhost:5087/api/unit/add", {
+            name:newUnit.name,
+            image:newUnit.image[0]
+        } , {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }})
             .then(resp=>{
                 setUnits([...getUnits, newUnit]); // Оновлення стану з додаванням нового товару
 

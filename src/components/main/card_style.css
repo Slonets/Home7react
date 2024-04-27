@@ -1,17 +1,16 @@
 .custom-container
 {
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: flex-start;
+    flex-wrap: wrap; /* Переносити елементи на новий рядок, якщо поточний рядок заповнений */
+    grid-gap: 10px;
+    width: 100%;
 }
 
 .card
 {
-    margin-left: 10px;
     width: 350px;
     height: 370px;
+    margin-bottom: 10px; /* Додавання відступу між картками, щоб вони не липли одна до одної */
 }
 
 .foto_container
@@ -43,9 +42,11 @@
     tab-size: 10px;
     font-weight: bold;
     object-fit: contain;
+    height: 40%;
 }
 
 .button
 {
+    height: 35%;
     background-color: black;
 }
